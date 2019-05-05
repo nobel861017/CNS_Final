@@ -2,7 +2,7 @@
 Final Project: Whitebox Attack on Image Classification models
 
 # CNS Final Proposal
-b05902121 黃冠博, b05902 宋哲寬, b05902 曾鈺婷, b05902 陳宏昇
+b05902121 黃冠博, b05902045 宋哲寬, b05902120 曾鈺婷, b05902113 陳宏昇
 
 ## Problem	description
 我們要做的事情跟[Face Recognition Attack](https://www.cs.cmu.edu/~sbhagava/papers/face-rec-ccs16.pdf)這篇paper很像，給定一個已知內部結構跟演算法的whitebox model，針對這個model的input做一些改動，好讓原本能正確辨識圖片的model因為這些adversarial image出現預測錯誤的情況。不同於上述提到的paper之處在於我們要做的是non-target attack，也就是說只要盡可能讓model predict錯就好，不用讓model硬是把某個類別predict成另一個類別(target attack)。
@@ -30,10 +30,8 @@ b05902121 黃冠博, b05902 宋哲寬, b05902 曾鈺婷, b05902 陳宏昇
 - 攻擊的成功率(accuracy準確率)，只要model將某張圖片預測成不同於ground truth label的類別就算攻擊成功
 - 攻擊後的圖片(adversarial image)與原圖的最大差距(L-infinity)
     - adversarial image是原圖加上noise，將adversarial image 跟原圖的每個pixel相減，取最大值，就是 L-infinity norm，也就是下列式子的$|x|_{\infty}$
-$$
-\mathcal{x} = [x_1,x_2, \cdots, x_n]\\
-|x|_{\infty} = \max\limits_{i} |x|_{i}
-$$
+$\mathcal{x} = [x_1,x_2, \cdots, x_n]$
+$|x|_{\infty} = \max\limits_{i} |x|_{i}$
 - 準確率越高的同時，希望L-infinity越低
 ## Timeline
 
